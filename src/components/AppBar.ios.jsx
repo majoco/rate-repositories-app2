@@ -1,5 +1,5 @@
 import React from "react"
-import { View, ScrollView, StyleSheet } from 'react-native'
+import { Text, View, ScrollView, StyleSheet } from 'react-native'
 import StyledText from './StyledText.jsx'
 import Constants from 'expo-constants'
 import theme from '../theme.js'
@@ -7,7 +7,7 @@ import { Link, useLocation} from 'react-router-native'
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: theme.appBar.primary,
+        backgroundColor: 'orange',
         flexDirection: 'row',
         paddingTop: Constants.statusBarHeight + 10,
         //paddingBottom: 10
@@ -50,11 +50,13 @@ const AppBarTab = ({children, to}) => {
 const AppBar = () => {    
     return (
         <View style={styles.container}>
+            <View>
             <ScrollView showsHorizontalScrollIndicator={false} horizontal style={styles.scroll}>
                 <AppBarTab to='/'>Repositories</AppBarTab>                
                 <AppBarTab to='/signin'>Sign In</AppBarTab>                                            
-                <AppBarTab to='/signin2'>Sign In2</AppBarTab>                                            
-            </ScrollView>
+            </ScrollView>            
+            <Text>Hola IOS</Text>
+            </View>
         </View>
     )
 }
